@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aalvard <aalvarad@student.42lausanne.ch    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/02 13:55:52 by aalvard           #+#    #+#             */
-/*   Updated: 2026/03/02 20:16:27 by aalvard          ###   ########.fr       */
+/*   Created: 2025/10/09 10:08:56 by aalvard           #+#    #+#             */
+/*   Updated: 2025/11/07 09:30:46 by aalvard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <limits.h>
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	unsigned char		*d;
+	unsigned char		*s;
 
-#include "../libft/libft.h"
-
-/* parsing / tokens */
-char	**get_tokens(int argc, char **argv);
-void	free_tokens(char **tokens);
-void	error_exit(void);
-
-#endif
+	if (!dst && !src)
+		return (NULL);
+	d = (unsigned char *)dst;
+	s = (unsigned char *)src;
+	if (d > s)
+	{
+		while (len > 0)
+		{
+			len--;
+			d[len] = s[len];
+		}
+	}
+	else
+		ft_memcpy(dst, src, len);
+	return (dst);
+}

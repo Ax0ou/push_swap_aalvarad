@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aalvard <aalvarad@student.42lausanne.ch    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/02 13:55:52 by aalvard           #+#    #+#             */
-/*   Updated: 2026/03/02 20:16:27 by aalvard          ###   ########.fr       */
+/*   Created: 2025/11/07 10:57:35 by aalvard           #+#    #+#             */
+/*   Updated: 2025/11/07 10:57:38 by aalvard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <limits.h>
+void	ft_putnbr_fd(int n, int fd)
+{
+	long	nb;
 
-#include "../libft/libft.h"
-
-/* parsing / tokens */
-char	**get_tokens(int argc, char **argv);
-void	free_tokens(char **tokens);
-void	error_exit(void);
-
-#endif
+	nb = n;
+	if (nb < 0)
+	{
+		write(fd, "-", 1);
+		nb = -nb;
+	}
+	if (nb >= 10)
+		ft_putnbr_fd(nb / 10, fd);
+	ft_putchar_fd((nb % 10) + '0', fd);
+}

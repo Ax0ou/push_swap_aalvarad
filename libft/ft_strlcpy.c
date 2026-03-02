@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aalvard <aalvarad@student.42lausanne.ch    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/02 13:55:52 by aalvard           #+#    #+#             */
-/*   Updated: 2026/03/02 20:16:27 by aalvard          ###   ########.fr       */
+/*   Created: 2025/10/23 14:39:11 by aalvarad          #+#    #+#             */
+/*   Updated: 2025/11/07 09:19:59 by aalvard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <limits.h>
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+{
+	size_t	len_src;
 
-#include "../libft/libft.h"
-
-/* parsing / tokens */
-char	**get_tokens(int argc, char **argv);
-void	free_tokens(char **tokens);
-void	error_exit(void);
-
-#endif
+	len_src = ft_strlen(src);
+	if (len_src + 1 < size)
+		ft_memcpy(dst, src, len_src + 1);
+	else if (size != 0)
+	{
+		ft_memcpy(dst, src, size - 1);
+		dst[size - 1] = '\0';
+	}
+	return (len_src);
+}

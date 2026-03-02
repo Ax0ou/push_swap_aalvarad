@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aalvard <aalvarad@student.42lausanne.ch    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/02 13:55:52 by aalvard           #+#    #+#             */
-/*   Updated: 2026/03/02 20:16:27 by aalvard          ###   ########.fr       */
+/*   Created: 2025/10/01 16:08:34 by aalvarad          #+#    #+#             */
+/*   Updated: 2025/11/07 09:20:49 by aalvard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <limits.h>
-
-#include "../libft/libft.h"
-
-/* parsing / tokens */
-char	**get_tokens(int argc, char **argv);
-void	free_tokens(char **tokens);
-void	error_exit(void);
-
-#endif
+int	ft_isdigit(int c)
+{
+	if ((c >= 48 && c <= 57))
+		return (1);
+	return (0);
+}

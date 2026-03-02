@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aalvard <aalvarad@student.42lausanne.ch    +#+  +:+       +#+        */
+/*   By: aalvarad <aalvarad.studient.42lausanne.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/02 19:27:47 by aalvard           #+#    #+#             */
-/*   Updated: 2026/03/02 20:03:42 by aalvard          ###   ########.fr       */
+/*   Created: 2025/10/28 12:54:24 by aalvard           #+#    #+#             */
+/*   Updated: 2025/10/29 09:25:06 by aalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	free_tokens(char **tokens)
+int	ft_tolower(int c)
 {
-	int	i;
-
-	if (!tokens)
-		return ;
-	i = 0;
-	while (tokens[i])
-	{
-		free(tokens[i]);
-		i++;
-	}
-	free(tokens);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
 }

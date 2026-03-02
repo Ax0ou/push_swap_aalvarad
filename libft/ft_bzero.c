@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aalvard <aalvarad@student.42lausanne.ch    +#+  +:+       +#+        */
+/*   By: aalvarad <aalvarad.studient.42lausanne.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/02 20:06:54 by aalvard           #+#    #+#             */
-/*   Updated: 2026/03/02 20:16:45 by aalvard          ###   ########.fr       */
+/*   Created: 2025/10/03 18:13:17 by aalvard           #+#    #+#             */
+/*   Updated: 2025/10/23 14:48:38 by aalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdio.h>
+#include "libft.h"
 
-int	main(int argc, char **argv)
+void	ft_bzero(void *s, size_t n)
 {
-	char	**tokens;
-	int		i;
+	unsigned char	*ptr;
+	size_t			i;
 
-	tokens = get_tokens(argc, argv);
-	if (!tokens)
-		return (0);
 	i = 0;
-	while (tokens[i])
+	ptr = (unsigned char *)s;
+	while (i < n)
 	{
-		printf("token[%d] = %s\n", i, tokens[i]);
+		ptr[i] = 0;
 		i++;
 	}
-	free_tokens(tokens);
-	return (0);
 }

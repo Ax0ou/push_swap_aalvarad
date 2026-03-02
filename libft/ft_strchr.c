@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aalvard <aalvarad@student.42lausanne.ch    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/02 13:55:52 by aalvard           #+#    #+#             */
-/*   Updated: 2026/03/02 20:16:27 by aalvard          ###   ########.fr       */
+/*   Created: 2025/10/28 13:05:51 by aalvard           #+#    #+#             */
+/*   Updated: 2025/11/07 09:17:46 by aalvard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <limits.h>
+char	*ft_strchr(const char *s, int c)
+{
+	const unsigned char	*p;
+	unsigned char		ch;
+	int					i;
 
-#include "../libft/libft.h"
-
-/* parsing / tokens */
-char	**get_tokens(int argc, char **argv);
-void	free_tokens(char **tokens);
-void	error_exit(void);
-
-#endif
+	ch = (unsigned char)c;
+	p = (const unsigned char *)s;
+	i = 0;
+	while (p[i])
+	{
+		if (p[i] == ch)
+			return ((char *)&p[i]);
+		i++;
+	}
+	if (ch == '\0')
+		return ((char *)&p[i]);
+	return (NULL);
+}
