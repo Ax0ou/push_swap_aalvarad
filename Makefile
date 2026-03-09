@@ -7,6 +7,7 @@ INCLUDES	= -Iincludes -Ilibft
 
 SRC			=	src/main.c \
 				src/parse_args.c \
+				src/parse_numbers.c \
 				src/parse_utils.c \
 				src/error.c \
 				src/free.c

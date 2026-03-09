@@ -6,27 +6,20 @@
 /*   By: aalvard <aalvarad@student.42lausanne.ch    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 20:06:54 by aalvard           #+#    #+#             */
-/*   Updated: 2026/03/02 20:16:45 by aalvard          ###   ########.fr       */
+/*   Updated: 2026/03/09 17:52:59 by aalvard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-int	main(int argc, char **argv)
+int main(int argc, char **argv)
 {
-	char	**tokens;
-	int		i;
+  int *numbers;
 
-	tokens = get_tokens(argc, argv);
-	if (!tokens)
-		return (0);
-	i = 0;
-	while (tokens[i])
-	{
-		printf("token[%d] = %s\n", i, tokens[i]);
-		i++;
-	}
-	free_tokens(tokens);
-	return (0);
+  numbers = parse_numbers(argc, argv);
+  if (!numbers)
+    return (0);
+  free(numbers);
+  return (0);
 }
