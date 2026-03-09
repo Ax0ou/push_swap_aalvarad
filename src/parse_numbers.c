@@ -6,7 +6,7 @@
 /*   By: aalvard <aalvarad@student.42lausanne.ch    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 13:20:47 by aalvard           #+#    #+#             */
-/*   Updated: 2026/03/09 17:17:57 by aalvard          ###   ########.fr       */
+/*   Updated: 2026/03/09 18:20:07 by aalvard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,11 @@ int	*parse_numbers(int argc, char **argv)
 	tokens = get_tokens(argc, argv);
 	if (!tokens)
 		return (NULL);
+	if (tokens[0] == NULL)
+	{
+		free_tokens(tokens);
+		error_exit();
+	}
 	validate_tokens(tokens);
 	len = tokens_len(tokens);
 	numbers = tokens_to_numbers(tokens, len);

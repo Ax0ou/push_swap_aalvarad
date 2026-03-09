@@ -6,7 +6,7 @@
 /*   By: aalvard <aalvarad@student.42lausanne.ch    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 14:08:57 by aalvard           #+#    #+#             */
-/*   Updated: 2026/03/02 19:40:40 by aalvard          ###   ########.fr       */
+/*   Updated: 2026/03/09 18:46:08 by aalvard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,13 @@ char	**get_tokens(int argc, char **argv)
 	if (argc == 2)
 	{
 		tokens = ft_split(argv[1], ' ');
-		if (!tokens || !tokens[0])
+		if (!tokens)
 			error_exit();
+		if (!tokens[0])
+		{
+			free_tokens(tokens);
+			error_exit();
+		}
 		return (tokens);
 	}
 	return (tokens_from_argv(argc, argv));
