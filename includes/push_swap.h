@@ -6,7 +6,7 @@
 /*   By: aalvard <aalvarad@student.42lausanne.ch    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 13:55:52 by aalvard           #+#    #+#             */
-/*   Updated: 2026/03/11 15:14:25 by aalvard          ###   ########.fr       */
+/*   Updated: 2026/03/11 18:31:40 by aalvard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,5 @@ int		tokens_len(char **tokens);
 int		*parse_numbers(int argc, char **argv);
 int		*tokens_to_numbers(char **tokens, int len);
 int		has_duplicates(int *arr, int len);
+int	stack_size(t_node *stack);
 #endif

@@ -6,7 +6,7 @@
 /*   By: aalvard <aalvarad@student.42lausanne.ch    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 13:43:24 by aalvard           #+#    #+#             */
-/*   Updated: 2026/03/11 17:47:48 by aalvard          ###   ########.fr       */
+/*   Updated: 2026/03/11 18:47:59 by aalvard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,19 @@ t_node *stack_last(t_node *stack)
 	while (last->next)
 		last = last->next;
 	return (last);
+}
+
+int	stack_size(t_node *stack)
+{
+	t_node	*current;
+	int		size;
+
+	current = stack;
+	size = 0;
+	while (current)
+	{
+		current = current->next;
+		size++;
+	}
+	return (size);
 }
