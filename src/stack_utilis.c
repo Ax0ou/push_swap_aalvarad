@@ -6,7 +6,7 @@
 /*   By: aalvard <aalvarad@student.42lausanne.ch    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 13:43:24 by aalvard           #+#    #+#             */
-/*   Updated: 2026/03/11 18:47:59 by aalvard          ###   ########.fr       */
+/*   Updated: 2026/03/16 15:48:14 by aalvard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,12 @@ int	stack_size(t_node *stack)
 		size++;
 	}
 	return (size);
+}
+
+void	stack_add_front(t_node **stack, t_node *new)
+{
+	if (!stack || !new)
+		return;
+	new->next = *stack;
+	*stack = new;
 }

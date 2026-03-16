@@ -6,7 +6,7 @@
 /*   By: aalvard <aalvarad@student.42lausanne.ch    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 13:55:52 by aalvard           #+#    #+#             */
-/*   Updated: 2026/03/11 18:31:40 by aalvard          ###   ########.fr       */
+/*   Updated: 2026/03/16 16:24:32 by aalvard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef	struct s_node
 
 /* parsing / tokens */
 t_node	*create_node(int value);
+t_node 	*stack_last(t_node *stack);
 char	**get_tokens(int argc, char **argv);
 void	stack_add_back(t_node **stack, t_node *new);
 void	free_tokens(char **tokens);
@@ -38,5 +39,6 @@ int		tokens_len(char **tokens);
 int		*parse_numbers(int argc, char **argv);
 int		*tokens_to_numbers(char **tokens, int len);
 int		has_duplicates(int *arr, int len);
-int	stack_size(t_node *stack);
+int		stack_size(t_node *stack);
+void	stack_add_front(t_node **stack, t_node *new);
 #endif
