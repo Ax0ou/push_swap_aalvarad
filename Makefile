@@ -11,6 +11,7 @@ SRC			=	src/main.c \
 				src/parse_utils.c \
 				src/error.c \
 				src/free.c
+				src/stack_ops.c 
 
 OBJ			= $(SRC:.c=.o)
 
