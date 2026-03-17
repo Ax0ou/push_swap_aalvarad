@@ -12,7 +12,7 @@ SRC			=	src/main.c \
 				src/error.c \
 				src/free.c \
 				src/stack_ops.c \
-				src/stack_utilis \
+				src/stack_utilis.c \
 
 OBJ			= $(SRC:.c=.o)
 
