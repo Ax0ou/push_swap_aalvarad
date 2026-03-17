@@ -10,8 +10,9 @@ SRC			=	src/main.c \
 				src/parse_numbers.c \
 				src/parse_utils.c \
 				src/error.c \
-				src/free.c
-				src/stack_ops.c 
+				src/free.c \
+				src/stack_ops.c \
+				src/stack_utilis \
 
 OBJ			= $(SRC:.c=.o)
 

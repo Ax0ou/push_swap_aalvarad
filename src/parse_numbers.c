@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_numbers.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aalvard <aalvarad@student.42lausanne.ch    +#+  +:+       +#+        */
+/*   By: aalvarad <aalvarad.studient.42lausanne.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 13:20:47 by aalvard           #+#    #+#             */
-/*   Updated: 2026/03/09 18:20:07 by aalvard          ###   ########.fr       */
+/*   Updated: 2026/03/17 16:09:56 by aalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static void	validate_tokens(char **tokens)
 	}
 }
 
-int	*parse_numbers(int argc, char **argv)
+int	*parse_numbers(int argc, char **argv, int *out_len)
 {
 	char	**tokens;
 	int		*numbers;
@@ -83,6 +83,7 @@ int	*parse_numbers(int argc, char **argv)
 		error_exit();
 	}
 	free_tokens(tokens);
+	*out_len = len;
 	return (numbers);
 }
 

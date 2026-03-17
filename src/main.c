@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aalvard <aalvarad@student.42lausanne.ch    +#+  +:+       +#+        */
+/*   By: aalvarad <aalvarad.studient.42lausanne.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 20:06:54 by aalvard           #+#    #+#             */
-/*   Updated: 2026/03/09 17:52:59 by aalvard          ###   ########.fr       */
+/*   Updated: 2026/03/17 16:17:29 by aalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,13 @@
 int main(int argc, char **argv)
 {
   int *numbers;
-
-  numbers = parse_numbers(argc, argv);
+  t_node *stack_a = NULL;
+  int len = 0;
+	
+  numbers = parse_numbers(argc, argv, &len);
   if (!numbers)
     return (0);
+	build_stack(&stack_a, numbers, len);
   free(numbers);
   return (0);
 }
