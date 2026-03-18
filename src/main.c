@@ -6,7 +6,7 @@
 /*   By: aalvarad <aalvarad.studient.42lausanne.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 20:06:54 by aalvard           #+#    #+#             */
-/*   Updated: 2026/03/17 16:17:29 by aalvarad         ###   ########.fr       */
+/*   Updated: 2026/03/17 18:03:25 by aalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ int main(int argc, char **argv)
     return (0);
 	build_stack(&stack_a, numbers, len);
   free(numbers);
+  stack_clear(&stack_a);
   return (0);
 }

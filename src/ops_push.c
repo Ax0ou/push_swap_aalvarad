@@ -1,43 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_ops.c                                        :+:      :+:    :+:   */
+/*   ops_push.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aalvarad <aalvarad.studient.42lausanne.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/16 15:59:54 by aalvard           #+#    #+#             */
-/*   Updated: 2026/03/17 17:49:14 by aalvarad         ###   ########.fr       */
+/*   Created: 2026/03/18 15:38:25 by aalvarad          #+#    #+#             */
+/*   Updated: 2026/03/18 15:59:44 by aalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void stack_clear(t_node **stack)
+void	pa(t_node **stack_a, t_node **stack_b)
 {
-	t_node	*current;
-	t_node	*tmp;
-
-	if (!stack)
+	int tmp;
+	if (!(*stack_b))
 		return;
-	while (*stack)
-	{
-		current = *stack;
-		tmp = current->next;
-		free(current);
-		*stack = tmp;
-	}
-}
-void	build_stack(t_node **stack, int *numbers, int size)
-{
-	int i;
-	t_node *tmp;
-	i = 0;
-	if (!stack || !numbers || !size)
-		return;
-	while (i < size)
-	{
-		tmp = create_node(numbers[i]);
-		stack_add_back(stack, tmp);
-		i++;
-	}
+	tmp = (*stack_b)->value;
+	(*stack_b)->value = (*stack_a)->next->value;
+	(*stack_a)->next->value = tmp;
+	write(1, "pa\n", 3);	
 }

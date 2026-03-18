@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utilis.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aalvard <aalvarad@student.42lausanne.ch    +#+  +:+       +#+        */
+/*   By: aalvarad <aalvarad.studient.42lausanne.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 13:43:24 by aalvard           #+#    #+#             */
-/*   Updated: 2026/03/16 15:48:14 by aalvard          ###   ########.fr       */
+/*   Updated: 2026/03/17 16:28:53 by aalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
