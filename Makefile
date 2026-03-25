@@ -13,6 +13,10 @@ SRC			=	src/main.c \
 				src/free.c \
 				src/stack_ops.c \
 				src/stack_utilis.c \
+				src/ops_rotate.c \
+				src/ops_rrotate.c \
+				src/ops_swap.c \
+				src/ops_push.c \
 
 OBJ			= $(SRC:.c=.o)
 
