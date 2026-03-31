@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aalvarad <aalvarad.studient.42lausanne.    +#+  +:+       +#+        */
+/*   By: aalvard <aalvarad@student.42lausanne.ch    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 13:55:52 by aalvard           #+#    #+#             */
-/*   Updated: 2026/03/25 16:46:24 by aalvarad         ###   ########.fr       */
+/*   Updated: 2026/03/31 16:40:40 by aalvard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,21 @@ void	rb(t_node **stack_b);
 void	rr(t_node **stack_a, t_node **stack_b);
 void	pa(t_node **stack_a, t_node **stack_b);
 void	pb(t_node **stack_b, t_node **stack_a);
+void	sa_silent(t_node **stack);
 void	ss(t_node **stack_a, t_node **stack_b);
 void	sa(t_node **stack);
 void	sb_silent(t_node **stack);
 void	sb(t_node **stack);
-void	ss(t_node **stack_a, t_node **stack_b);
+
+void	sort_two(t_node **stack_a);
+void	sort_three(t_node **stack_a);
+void	sort_five(t_node **stack_a, t_node **stack_b);
+int	find_min_pos(t_node *stack_a);
+int	is_sorted(t_node *stack_a);
+
+void	indexer(t_node *stack_a);
+int	get_max_bits(int size);
+void	radix_sort(t_node **stack_a, t_node **stack_b, int size);
+void	sort_stack(t_node **stack_a, t_node **stack_b, int len);
+void	bring_min_to_top(t_node **stack_a);
 #endif

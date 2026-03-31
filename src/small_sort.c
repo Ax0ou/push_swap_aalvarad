@@ -6,7 +6,7 @@
 /*   By: aalvard <aalvarad@student.42lausanne.ch    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/27 11:18:31 by aalvard           #+#    #+#             */
-/*   Updated: 2026/03/27 14:30:37 by aalvard          ###   ########.fr       */
+/*   Updated: 2026/03/31 16:38:21 by aalvard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,11 @@ void	sort_three(t_node **stack_a)
 
 void    sort_five(t_node **stack_a, t_node **stack_b)
 {
-    while (find_min_pos(*stack_a) != 0)
-        ra(stack_a);
-    pb(stack_b, stack_a);  // min → B
-	while (find_min_pos(*stack_a) != 0)
-        ra(stack_a);
+    bring_min_to_top(stack_a);
     pb(stack_b, stack_a);
-	sort_three(stack_a);
+    bring_min_to_top(stack_a);
+    pb(stack_b, stack_a);
+    sort_three(stack_a);
     pa(stack_a, stack_b);
     pa(stack_a, stack_b);
 }
@@ -84,7 +82,7 @@ int find_min_pos(t_node *stack_a)
         current = current->next;
         i++;
     }
-    return (pos);
+	return (pos);
 }
 
 int is_sorted(t_node *stack_a)

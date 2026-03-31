@@ -16,7 +16,9 @@ SRC			=	src/main.c \
 				src/ops_rotate.c \
 				src/ops_rrotate.c \
 				src/ops_swap.c \
-				src/ops_push.c \
+				 src/ops_push.c \
+				 src/small_sort.c \
+				 src/radix_sort.c \
 
 OBJ			= $(SRC:.c=.o)
 

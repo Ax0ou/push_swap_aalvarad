@@ -1,1 +1,2 @@
-voir poour plusieurs arg
+A refactor c'est la fonction dans small_sort.
+
