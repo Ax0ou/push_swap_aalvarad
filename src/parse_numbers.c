@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_numbers.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aalvarad <aalvarad.studient.42lausanne.    +#+  +:+       +#+        */
+/*   By: aalvard <aalvarad@student.42lausanne.ch    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 13:20:47 by aalvard           #+#    #+#             */
-/*   Updated: 2026/03/17 16:09:56 by aalvarad         ###   ########.fr       */
+/*   Updated: 2026/03/31 17:51:15 by aalvard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ int	has_duplicates(int *arr, int len)
 	}
 	return (0);
 }
+
+static int	*tokens_to_numbers(char **tokens, int len);
 
 static void	validate_tokens(char **tokens)
 {
@@ -87,7 +89,7 @@ int	*parse_numbers(int argc, char **argv, int *out_len)
 	return (numbers);
 }
 
-int	*tokens_to_numbers(char **tokens, int len)
+static int	*tokens_to_numbers(char **tokens, int len)
 {
 	int	*numbers;
 	int	i;
@@ -99,7 +101,7 @@ int	*tokens_to_numbers(char **tokens, int len)
 		error_exit();
 	}
 	i = 0;
-	while (tokens[i])
+	while (i < len)
 	{
 		numbers[i] = ft_atoi(tokens[i]);
 		i++;

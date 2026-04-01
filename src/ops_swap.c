@@ -17,7 +17,7 @@ void	sa_silent(t_node **stack)
 	int	tmp;
 
 	if (stack_size(*stack) < 2)
-		return;
+		return ;
 	tmp = (*stack)->value;
 	(*stack)->value = ((*stack)->next->value);
 	(*stack)->next->value = tmp;
@@ -26,7 +26,7 @@ void	sa_silent(t_node **stack)
 void	sa(t_node **stack)
 {
 	sa_silent(stack);
-	write (1, "sa\n", 3);
+	write(1, "sa\n", 3);
 }
 
 void	sb_silent(t_node **stack)
@@ -34,7 +34,7 @@ void	sb_silent(t_node **stack)
 	int	tmp;
 
 	if (stack_size(*stack) < 2)
-		return;
+		return ;
 	tmp = (*stack)->value;
 	(*stack)->value = (*stack)->next->value;
 	(*stack)->next->value = tmp;

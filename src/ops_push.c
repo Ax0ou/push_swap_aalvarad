@@ -14,10 +14,10 @@
 
 void	pa(t_node **stack_a, t_node **stack_b)
 {
-	t_node *tmp;
+	t_node	*tmp;
 
 	if (!(*stack_b))
-		return;
+		return ;
 	tmp = (*stack_b);
 	(*stack_b) = (*stack_b)->next;
 	tmp->next = NULL;
@@ -27,10 +27,10 @@ void	pa(t_node **stack_a, t_node **stack_b)
 
 void	pb(t_node **stack_b, t_node **stack_a)
 {
-	t_node *tmp;
+	t_node	*tmp;
 
 	if (!(*stack_a))
-		return;
+		return ;
 	tmp = (*stack_a);
 	(*stack_a) = (*stack_a)->next;
 	tmp->next = NULL;

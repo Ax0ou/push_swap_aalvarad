@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utilis.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aalvarad <aalvarad.studient.42lausanne.    +#+  +:+       +#+        */
+/*   By: aalvard <aalvarad@student.42lausanne.ch    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 13:43:24 by aalvard           #+#    #+#             */
-/*   Updated: 2026/03/17 16:28:53 by aalvarad         ###   ########.fr       */
+/*   Updated: 2026/04/01 10:36:38 by aalvard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static t_node	*stack_last(t_node *stack);
 
 t_node	*create_node(int value)
 {
@@ -20,27 +22,30 @@ t_node	*create_node(int value)
 	if (!node)
 		return (NULL);
 	node->value = value;
+	node->index = -1;
 	node->next = NULL;
 	return (node);
 }
 
-void	stack_add_back(t_node **stack, t_node *new) // adresse du pointeur vers le premier node (**stack) && le node qu'on veux ajouter (*new)
+void	stack_add_back(t_node **stack, t_node *new)
 {
 	t_node	*last;
+
 	if (!stack || !new)
-		return;
+		return ;
 	if (!*stack)
 	{
 		*stack = new;
-		return;
+		return ;
 	}
 	last = stack_last(*stack);
 	last->next = new;
 }
 
-t_node *stack_last(t_node *stack)
+static t_node	*stack_last(t_node *stack)
 {
 	t_node	*last;
+
 	if (!stack)
 		return (NULL);
 	last = stack;
@@ -67,7 +72,7 @@ int	stack_size(t_node *stack)
 void	stack_add_front(t_node **stack, t_node *new)
 {
 	if (!stack || !new)
-		return;
+		return ;
 	new->next = *stack;
 	*stack = new;
 }
